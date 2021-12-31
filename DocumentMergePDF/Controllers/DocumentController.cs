@@ -35,9 +35,9 @@ namespace DocumentMergePDF.Controllers
             
             var fields = new Dictionary<string, string>();
             var index = 0;
-            foreach(var item in fieldValues)
+            foreach(var item in filedNames)
             {
-                fields.Add(item, filedNames[index]);
+                fields.Add(item, fieldValues[index]);
                 index++;
             }
             var (outputStream, errors) = new MailMerger().Merge(template.OpenReadStream(), fields);
@@ -91,10 +91,12 @@ namespace DocumentMergePDF.Controllers
             Spire.Doc.Document document = new Spire.Doc.Document(outputStream, FileFormat.Docx);
             var pdfoutputStream = new MemoryStream();
 
+
             ToPdfParameterList ps = new ToPdfParameterList
             {
-                UsePSCoversion = true,
-                PdfConformanceLevel = Spire.Pdf.PdfConformanceLevel.Pdf_X1A2001
+                UsePSCoversion = true
+                //PdfConformanceLevel = Spire.Pdf.PdfConformanceLevel.Pdf_X1A2001,
+
 
             };
 
