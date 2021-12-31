@@ -93,7 +93,7 @@ namespace DocumentMergePDF.Controllers
             var pdfoutputStream = new MemoryStream();
 
 
-            var fontFile = "fonts/arial.ttf";
+            var fontFile = "/opt/app-root/src/DocumentMergePDF/fonts/arial.ttf";
             List<PrivateFontPath> fonts = new List<PrivateFontPath>();
             fonts.Add(new PrivateFontPath("Arial", fontFile));
             fonts.Add(new PrivateFontPath("arial", fontFile));
