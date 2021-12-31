@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Serilog;
 using Serilog.Extensions.Logging;
 using Spire.Doc;
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -92,6 +93,68 @@ namespace DocumentMergePDF.Controllers
             var pdfoutputStream = new MemoryStream();
 
 
+            var fontFile = "fonts/arial.ttf";
+            List<PrivateFontPath> fonts = new List<PrivateFontPath>();
+            fonts.Add(new PrivateFontPath("Arial", fontFile));
+            fonts.Add(new PrivateFontPath("arial", fontFile));
+
+            ToPdfParameterList ps = new ToPdfParameterList
+            {
+                UsePSCoversion = true,
+                PdfConformanceLevel = Spire.Pdf.PdfConformanceLevel.Pdf_X1A2001,
+                PrivateFontPaths = fonts
+            };
+
+            document.SaveToStream(pdfoutputStream, ps);
+
+            pdfoutputStream.Seek(0, SeekOrigin.Begin);
+
+            log.Information("render process ended");
+
+            return File(pdfoutputStream, "application/pdf", "outputfile.pdf");
+
+        }
+
+
+        [HttpPost("renderdocumentv3")]
+        public async Task<IActionResult> Renderv3(List<string> filedNames, List<string> fieldValues, IFormFile template)
+        {
+
+            var log = new LoggerConfiguration()
+                        .WriteTo.Console()
+                        .CreateLogger();
+
+
+            var microsoftLogger = new SerilogLoggerFactory(log)
+                .CreateLogger("logger");
+
+            log.Information("render process started");
+
+            var fields = new Dictionary<string, string>();
+            var index = 0;
+            foreach (var item in filedNames)
+            {
+                fields.Add(item, fieldValues[index]);
+                index++;
+            }
+
+            var outputStream = new MemoryStream();
+            template.OpenReadStream().CopyTo(outputStream);
+
+            ApplyAllKnownMergeTransformationsToMainDocumentPart(fields, outputStream, microsoftLogger);
+
+            /* using (var fileStream = System.IO.File.Create("out.docx"))
+             {
+                 outputStream.Seek(0, SeekOrigin.Begin);
+                 outputStream.CopyTo(fileStream);
+             }*/
+
+            Spire.Doc.Document document = new Spire.Doc.Document(outputStream, FileFormat.Docx);
+            var pdfoutputStream = new MemoryStream();
+
+            var images = document.SaveToImages(Spire.Doc.Documents.ImageType.Bitmap);
+
+
             ToPdfParameterList ps = new ToPdfParameterList
             {
                 UsePSCoversion = true
@@ -111,7 +174,6 @@ namespace DocumentMergePDF.Controllers
         }
 
 
-        
         internal void ApplyAllKnownMergeTransformationsToMainDocumentPart(Dictionary<string, string> fieldValues, Stream workingStream, Microsoft.Extensions.Logging.ILogger microsoftLogger = null)
         {
             var xdoc = GetMainDocumentPartXml(workingStream);
