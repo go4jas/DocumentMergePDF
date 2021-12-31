@@ -1,0 +1,31 @@
+2021-12-31 13:52:59.149 -07:00 [INF] render process started
+2021-12-31 13:53:03.802 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  ContraventionNumber  \* MERGEFORMAT 
+2021-12-31 13:53:03.802 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  TrafficSafteyActSection  \* MERGEFORMAT 
+2021-12-31 13:53:03.802 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  TrafficSafteyActDescription  \* MERGEFORMAT 
+2021-12-31 13:53:03.802 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  OccuranceTime  \* MERGEFORMAT 
+2021-12-31 13:53:03.802 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  OccuranceDate  \* MERGEFORMAT 
+2021-12-31 13:53:03.802 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  FineAmount  \* MERGEFORMAT 
+2021-12-31 13:53:03.802 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  Demerits  \* MERGEFORMAT 
+2021-12-31 13:53:03.802 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  RecipientName  \* MERGEFORMAT 
+2021-12-31 13:53:03.802 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  LicencePlate  \* MERGEFORMAT 
+2021-12-31 13:53:03.802 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  IssueDate  \* MERGEFORMAT 
+2021-12-31 13:53:03.821 -07:00 [INF] render process ended
+2021-12-31 13:59:09.934 -07:00 [INF] render process started
+2021-12-31 13:59:51.009 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  ContraventionNumber  \* MERGEFORMAT 
+2021-12-31 13:59:51.010 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  TrafficSafteyActSection  \* MERGEFORMAT 
+2021-12-31 13:59:51.010 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  TrafficSafteyActDescription  \* MERGEFORMAT 
+2021-12-31 13:59:51.010 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  OccuranceTime  \* MERGEFORMAT 
+2021-12-31 13:59:51.010 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  OccuranceDate  \* MERGEFORMAT 
+2021-12-31 13:59:51.010 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  FineAmount  \* MERGEFORMAT 
+2021-12-31 13:59:51.010 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  Demerits  \* MERGEFORMAT 
+2021-12-31 13:59:51.011 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  RecipientName  \* MERGEFORMAT 
+2021-12-31 13:59:51.011 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  LicencePlate  \* MERGEFORMAT 
+2021-12-31 13:59:51.011 -07:00 [WRN] Nothing in the fieldValue dictionary for  MERGEFIELD  IssueDate  \* MERGEFORMAT 
+2021-12-31 13:59:51.036 -07:00 [INF] render process ended
+2021-12-31 14:10:28.040 -07:00 [INF] render process started
+2021-12-31 14:10:38.799 -07:00 [INF] render process ended
+2021-12-31 14:12:30.105 -07:00 [INF] render process started
+2021-12-31 14:12:34.774 -07:00 [INF] render process ended
+2021-12-31 14:53:33.051 -07:00 [INF] render process started
+2021-12-31 14:53:37.414 -07:00 [INF] render process ended
+2021-12-31 15:06:05.686 -07:00 [INF] render process started
